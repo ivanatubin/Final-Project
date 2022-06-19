@@ -49,12 +49,15 @@ public class WebTablesPage extends BasePage {
     }
 
     /**
-     * Method finds edit icon in a row
+     * Method returns web element edit icon in a row
      */
     public WebElement getEdit (String row) {
         return getDriver().findElement(By.id("edit-record-" +row ));
     }
 
+    /**
+     * Get method for web elements by locator add
+     */
     public WebElement getAdd () {
       return getDriver().findElement(add);
     }

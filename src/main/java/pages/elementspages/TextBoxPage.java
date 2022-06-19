@@ -16,45 +16,68 @@ public class TextBoxPage extends BasePage {
     private By currentAddress = By.id("currentAddress");
     private By permanentAddress = By.id("permanentAddress");
     private By submit = By.xpath("//*[@id=\"submit\"]");
-   // private By clickX = By.xpath("//*[@id=\"cbb\"]/svg/path[1]");
-   /* private By resultName = By.id("name");
-    private By resultEmail = By.id("email");
-    private By resultCurrAddress = By.xpath("//*[@id=\"currentAddress\"]");
-    private By resultPermAddress = By.id("permanentAddress"); */
     private By resultAL = By.xpath("//*[@id=\"output\"]");
 
 
-
+    /**
+     * Get method for web element by locator submit
+     * */
     public WebElement getSubmit () {
         return getDriver().findElement(submit);
     }
-
+    /**
+     * Get method for web element by locator fullName
+     * */
     public WebElement getFullName () {
         return getDriver().findElement(fullName);
     }
+    /**
+     * Get method for web element by locator email
+     * */
     public WebElement getEmail () {
         return getDriver().findElement(email);
     }
+    /**
+     * Get method for web element by locator currentAddress
+     * */
     public WebElement getCurrentAddress () {
         return getDriver().findElement(currentAddress);
     }
+    /**
+     * Get method for web element by locator permanentAddress
+     * */
     public WebElement getPermanentAddress () {
         return getDriver().findElement(permanentAddress);
     }
 
+    /**
+     * Method inputs full name in text box
+     * */
     public void setFullName (String  fullName) {
         getFullName().sendKeys(fullName);
     }
+    /**
+     * Method inputs email in text box
+     * */
     public void setEmail (String  email) {
         getEmail().sendKeys(email);
     }
+    /**
+     * Method inputs current address in text box
+     * */
     public void setCurrentAddress (String address) {
         getCurrentAddress().sendKeys(address);
     }
+    /**
+     * Method inputs permanent address in text box
+     * */
     public void setPermanentAddress (String address) {
         getPermanentAddress().sendKeys(address);
     }
-
+    /**
+     * Method fills text box
+     * Send inputs to: fullName, email, permanent address, current address
+     * */
     public void fillTextBox (String fullName, String email, String currentAddress, String permAddress) {
         setFullName(fullName);
         setEmail(email);
@@ -72,19 +95,9 @@ public class TextBoxPage extends BasePage {
         super(driver, driverWait);
     }
 
-   /* public String getResultName () {
-        return getDriver().findElement(resultName).getText();
-    }
-    public String getResultEmail () {
-        return getDriver().findElement(resultEmail).getText();
-    }
-    public String getResultCAddress () {
-        return getDriver().findElement(resultCurrAddress).getText();
-    }
-    public String getResultPermAddress() {
-        return getDriver().findElement(resultPermAddress).getText();
-    } */
-
+    /**
+     * Method returns text result after subbmiting text box
+     * */
     public String getAllResult () {
         return getDriver().findElement(resultAL).getText();
     }

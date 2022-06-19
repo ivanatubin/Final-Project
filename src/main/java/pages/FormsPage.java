@@ -23,59 +23,89 @@ public class FormsPage extends BasePage{
     private By mobileResult = By.xpath("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[4]/td[2]");
     private By nameResult = By.xpath("/html/body/div[4]/div/div/div[2]/div/table/tbody/tr[1]/td[2]");
 
-
+    /**
+     * Method clicks on practice form
+     * */
     public void checkPracticeForm () {
         scroll();
         getDriverWait().until(ExpectedConditions.elementToBeClickable(practiceForm));
         getDriver().findElement(practiceForm).click();
     }
-
-    public void fillFormReqired (String fisrtName, String lastName, String gender,  String mobile) {
-        sendKeys(getFirstName(),fisrtName);
+    /**
+     * Method sends keys to required fields
+     * */
+    public void fillFormRequired(String firstName, String lastName, String gender, String mobile) {
+        sendKeys(getFirstName(),firstName);
         sendKeys(getLastName(),lastName);
         if (gender.equalsIgnoreCase("male")) {getMale().click(); } else {getFemale().click();}
         getMobile().sendKeys(mobile, Keys.ENTER);
     }
-
+    /**
+     * Method returns header message
+     * */
     public String getMessage () {
        return getThankMessage().getText();
     }
+
+    /**
+     * Method returns result for mobile
+     * */
     public String mobileResult () {
         return getMobileResult().getText();
     }
-
+    /**
+     * Method returns result for name
+     * */
     public String nameResult () {
         return getName().getText();
     }
-
+    /**
+     * Get method for web element by locator nameResult
+     * */
     public WebElement getName() {
         return getDriver().findElement(nameResult);
     }
 
 
-
+    /**
+     * Get method for web element by locator firstName
+     * */
     public WebElement getFirstName() {
         return getDriver().findElement(firstName);
     }
-
+    /**
+     * Get method for web element by locator lastName
+     * */
     public WebElement getLastName() {
         return getDriver().findElement(lastName);
     }
-
+    /**
+     * Get method for web element by locator female
+     * */
     public WebElement getFemale() {
         return getDriver().findElement(female);
     }
+    /**
+     * Get method for web element by locator male
+     * */
     public WebElement getMale() {
         return getDriver().findElement(male);
     }
-
+    /**
+     * Get method for web element by locator thankMessage
+     * */
     public WebElement getThankMessage() {
         return getDriver().findElement(thankMessage);
     }
-
+    /**
+     * Get method for web element by locator mobile
+     * */
     public WebElement getMobile() {
         return getDriver().findElement(mobile);
     }
+    /**
+     * Get method for web element by locator mobileResult
+     * */
     public WebElement getMobileResult() {
         return getDriver().findElement(mobileResult);
     }

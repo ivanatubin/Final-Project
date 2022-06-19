@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class ElementsTets extends BaseTest{
     /**
-     * Verify that filling text box with valid input returns correct data
+     * Verify that filling text box with valid inputs returns correct data
      */
     @Test
     public void verifyFillTextBox () {

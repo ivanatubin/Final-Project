@@ -17,10 +17,16 @@ public class StorePage extends BasePage {
 
     private By logout = By.id("submit");
 
+    /**
+     *Method finds logout button and click on it
+     */
     public void logout () {
         getWElogout().click();
     }
 
+    /**
+     * Method finds the book by title and add it to collection
+     */
     public void addToCollection (String book) {
         getDriverWait().until(ExpectedConditions.elementToBeClickable(By.linkText(book)));
         getDriver().findElement(By.linkText(book)).click();
@@ -32,13 +38,16 @@ public class StorePage extends BasePage {
         getDriver().switchTo().alert().accept();
     }
 
+    /**
+     *Method navigates to profile
+     */
     public void goToProfile () {
         getDriver().navigate().to("https://demoqa.com/profile");
-        /*scroll();
-        getDriverWait().until(ExpectedConditions.elementToBeClickable(profileBtn));
-        getDriver().findElement(profileBtn).click();*/
     }
 
+    /**
+     * Method checks is book in collection by book title
+     */
     public boolean isBookInTable (String title) {
         List<WebElement> listaRedova = getDriver().findElements(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/div[1]/div[2]/div"));
 
@@ -69,6 +78,9 @@ public class StorePage extends BasePage {
     }
 
 
+    /**
+     * Get method for web element by locator logout
+     */
     public WebElement getWElogout () {
         return getDriver().findElement(logout);
     }

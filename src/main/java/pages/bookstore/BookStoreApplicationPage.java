@@ -13,6 +13,9 @@ public class BookStoreApplicationPage extends BasePage {
     private By password = By.id("password");
     private By loginBtn = By.id("login");
 
+    /**
+     * Method sends username and password, and clicks on login
+     */
     public void login (String userName, String password) {
         scroll();
         getDriverWait().until(ExpectedConditions.elementToBeClickable(login1));
@@ -27,17 +30,29 @@ public class BookStoreApplicationPage extends BasePage {
 
     }
 
+    /**
+     * Get method for web element by locator login1
+     */
     public WebElement getWELogin1() {
         return getDriver().findElement(login1);
     }
 
+    /**
+     * Get method for web element by locator username
+     */
     public WebElement getWEUsername () {
         return getDriver().findElement(username);
     }
+    /**
+     * Get method for web element by locator password
+     */
     public WebElement getWEPassword () {
         return getDriver().findElement(password);
     }
 
+    /**
+     * Get method for web element by locator loginBtn
+     */
     public WebElement getWELoginBtn () {
         return getDriver().findElement(loginBtn);
     }

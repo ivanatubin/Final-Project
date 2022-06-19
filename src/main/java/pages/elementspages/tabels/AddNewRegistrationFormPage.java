@@ -39,24 +39,45 @@ public class AddNewRegistrationFormPage extends WebTablesPage {
         weSubmitBtn().click();
     }
 
+    /**
+     * Get method for web element by locator submitBtn
+     */
     public WebElement weSubmitBtn () {
         return getDriver().findElement(submitBtn);
     }
+    /**
+     * Get method for web element by locator department
+     */
     public WebElement weDepartment () {
         return getDriver().findElement(department);
     }
+    /**
+     * Get method for web element by locator salary
+     */
     public WebElement weSalary() {
         return getDriver().findElement(salary);
     }
+    /**
+     * Get method for web element by locator age
+     */
     public WebElement weAge () {
         return getDriver().findElement(age);
     }
+    /**
+     * Get method for web element by locator email
+     */
     public WebElement weEmail() {
         return getDriver().findElement(email);
     }
+    /**
+     * Get method for web element by locator lastname
+     */
     public WebElement weLastName () {
         return getDriver().findElement(lastName);
     }
+    /**
+     * Get method for web element by locator firstname
+     */
     public WebElement weFirstName () {
         return getDriver().findElement(firstName);
     }

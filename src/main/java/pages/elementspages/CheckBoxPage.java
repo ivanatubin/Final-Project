@@ -17,25 +17,42 @@ public class CheckBoxPage extends BasePage {
     public CheckBoxPage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
+
+    /**
+     * Get method for web element by locator workspace
+     */
     public WebElement getWorkspace () {
         return getDriver().findElement(workspace);
     }
-
+    /**
+     * Get method for web element by locator expand
+     */
     public WebElement getExpand () {
        return getDriver().findElement(expand);
     }
+    /**
+     * Get method for web element by locator resultText
+     */
     public WebElement getResult () {
         return  getDriver().findElement(resultText);
     }
-
+    /**
+     * Method expands list and checks workspace
+     */
     public void checkWorkspace () {
         getExpand().click();
         getWorkspace().click();
     }
+    /**
+     * Method returns String message
+     */
     public String getResultText () {
        return getResult().getText();
     }
 
+    /**
+     * Method returns boolean is all subsections of workspace checked
+     */
     public boolean isAllChecked () {
      if (getDriver().findElement(react).isSelected() && getDriver().findElement(angular).isSelected() && getDriver().findElement(veu).isSelected()) {
          return true;

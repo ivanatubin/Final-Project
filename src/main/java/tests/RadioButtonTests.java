@@ -14,7 +14,7 @@ public class RadioButtonTests extends BaseTest{
     }
 
     /**
-     * Verify that fields impressive and no are not selected when field yes is
+     * Verify that fields impressive and no are not selected when field yes is checked
      */
     @Test
     public void verifyRadioButtonYes () {
@@ -26,7 +26,7 @@ public class RadioButtonTests extends BaseTest{
     }
 
     /**
-     * Verify that fields yes and no are not selected when impressive is
+     * Verify that fields yes and no are not selected when impressive is checked
      */
     @Test
     public void verifyRadioButtonImpressive () {

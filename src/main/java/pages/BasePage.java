@@ -23,16 +23,24 @@ public class BasePage {
         return driverWait;
     }
 
-
+    /**
+     * Method scrolls down
+     * */
     public void scroll () {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollBy(0,250)", "");
     }
 
+    /**
+     * Method send text to web element
+     * */
     public void sendKeys (WebElement we, String input) {
         we.sendKeys(input);
     }
 
+    /**
+     * Method clears field
+     * */
     public void clearField(By by) {
         getDriver().findElement(by).clear();
     }

@@ -21,22 +21,35 @@ public class ButtonsPage extends BasePage {
     private By commercial = By.id("Ad.Plus-728x90");
 
 
+    /**
+     * Method returns visible message after click
+     */
     public String getTextClickMessage () {
         return getClickMessage().getText();
     }
 
+    /**
+     * Method clicks on click button
+     */
     public void click () {
         getDriverWait().until(ExpectedConditions.visibilityOfElementLocated(commercial));
         scroll();
         getDriverWait().until(ExpectedConditions.elementToBeClickable(click));
         getClick().click();
     }
+    /**
+     * Method right clicks on right-click button
+     */
     public void rightClick () {
         getDriverWait().until(ExpectedConditions.visibilityOfElementLocated(commercial));
         getDriverWait().until(ExpectedConditions.elementToBeClickable(rightClick));
         Actions actions = new Actions(getDriver());
         actions.contextClick(getRightClick()).perform();
     }
+
+    /**
+     * Method double-clicks on double-click button
+     */
     public void doubleClick () {
         getDriverWait().until(ExpectedConditions.visibilityOfElementLocated(commercial));
         getDriverWait().until(ExpectedConditions.elementToBeClickable(doubleClickMe));
@@ -44,29 +57,53 @@ public class ButtonsPage extends BasePage {
         actions.doubleClick(getDoubleClickMe()).perform();
     }
 
+    /**
+     * Method returns visible message after right clik
+     */
     public String getMessageRightClick () {
         return getRightClickMessage().getText();
     }
+
+    /**
+     * Method returns visible message after double-click
+     */
     public String getMessageDoubleClick () {
        return getDoubleClickMessage().getText();
     }
 
-
+    /**
+     * Get method for web element by locator doubleClickMe
+     */
     public WebElement getDoubleClickMe () {
         return getDriver().findElement(doubleClickMe);
     }
+    /**
+     * Get method for web element by locator doubleClickMessage
+     */
     public WebElement getDoubleClickMessage () {
         return getDriver().findElement(doubleClickMessage);
     }
+    /**
+     * Get method for web element by locator rightClick
+     */
     public WebElement getRightClick () {
         return getDriver().findElement(rightClick);
     }
+    /**
+     * Get method for web element by locator rightClickMess
+     */
     public WebElement getRightClickMessage () {
         return getDriver().findElement(rightClickMess);
     }
+    /**
+     * Get method for web element by locator click
+     */
     public WebElement getClick () {
         return getDriver().findElement(click);
     }
+    /**
+     * Get method for web element by locator clickMess
+     */
     public WebElement getClickMessage () {
         return getDriver().findElement(clickMess);
     }
